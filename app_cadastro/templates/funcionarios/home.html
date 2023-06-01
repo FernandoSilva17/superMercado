@@ -1,0 +1,32 @@
+
+{% extends 'funcionarios/base.html' %}
+{% block conteudo %}
+<form action="{% url 'listagem_funcionario' %}" method="post">
+    {% csrf_token %}
+    <div style="text-align:center;" class="container">
+        <center>
+            <div class="form-group col-md-4">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" class="form-control" placeholder="Nome">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" class="form-control" placeholder="CPF">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="endereco">Endereço</label>
+                <input type="text" name="endereco" class="form-control" placeholder="Endereço">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="fone">Telefone</label>
+                <input type="text" class="form-control" name="fone" placeholder="(##)#####-####">
+            </div><br>
+            <button class="btn btn-primary">Enviar</button>
+        </center>
+   </div>
+</form>
+{% endblock %}
